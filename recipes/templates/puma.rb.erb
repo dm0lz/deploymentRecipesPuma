@@ -1,0 +1,12 @@
+environment 'production'
+daemonize false
+
+pidfile "<%= puma_pid %>"
+state_path "<%= puma_state %>"
+
+
+threads 0, 16
+bind "<%= puma_sock %>"
+
+
+activate_control_app "<%= puma_sock_ctl %>"
