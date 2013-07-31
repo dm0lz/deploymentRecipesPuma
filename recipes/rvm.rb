@@ -21,9 +21,6 @@ before 'deploy:setup', 'rvm:install_ruby' # install Ruby and create gemset, OR:
 
 
 
-
-
-
 #The problem may be that you need to create the bundler wrapper. You can do that this way(in your deploy.rb, for example)
 
 #require "rvm/capistrano" # http://beginrescueend.com/integration/capistrano/
