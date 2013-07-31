@@ -19,9 +19,9 @@ namespace :puma do
 	after "deploy:setup", "puma:setup"
 
 	%w[start stop restart].each do |command|
-	    desc "#{command} unicorn"
+	    desc "#{command} Puma"
 	    task command, roles: :app do
-	      	run "service puma_#{application} #{command}"
+	      	run "#{sudo} service puma_#{application} #{command}"
 	    end
 	    after "deploy:#{command}", "puma:#{command}"
   end
