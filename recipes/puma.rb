@@ -21,7 +21,7 @@ namespace :puma do
 	%w[start stop restart].each do |command|
 	    desc "#{command} Puma"
 	    task command, roles: :app do
-	      	run "#{sudo} service puma_#{application} #{command}"
+	      	run "service puma_#{application} #{command}"
 	    end
 	    after "deploy:#{command}", "puma:#{command}"
   end
