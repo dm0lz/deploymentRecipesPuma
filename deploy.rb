@@ -18,7 +18,7 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 
 set :scm, "git"
-set :repository,  "https://github.com/OlIvIeR77/#{application}.git"
+set :repository,  "https://github.com/oducroux/#{application}.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
