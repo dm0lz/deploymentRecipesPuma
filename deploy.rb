@@ -8,7 +8,7 @@ load "config/recipes/puma"
 load "config/recipes/mysql"
 load "config/recipes/rvm"
 
-server "olivierdo.no-ip.org", :web, :app, :db, primary: true
+server "olivierdo.no-ip.org", :web, :app, :db, :primary => true
 
 set :site_url, "olivierdo.no-ip.org"
 set :application, "pumaApp"

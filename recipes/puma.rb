@@ -8,7 +8,7 @@ set_default(:puma_user) { user }
 namespace :puma do
 
 	desc "Setup puma config"	
-	task :setup, roles: :app do
+	task :setup, :roles => :app do
 		run "mkdir -p #{shared_path}/config"
 		template "puma.rb.erb", puma_config
 		template "puma_init.erb", "/tmp/puma_init"
@@ -20,7 +20,7 @@ namespace :puma do
 
 	%w[start stop restart].each do |command|
 	    desc "#{command} Puma"
-	    task command, roles: :app do
+	    task command, :roles => :app do
 	      	run "service puma_#{application} #{command}"
 	    end
 	    after "deploy:#{command}", "puma:#{command}"

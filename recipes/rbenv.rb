@@ -3,7 +3,7 @@ set_default :rbenv_bootstrap, "bootstrap-ubuntu-10-04"
 
 namespace :rbenv do
   desc "Install rbenv, Ruby, and the Bundler gem"
-  task :install, roles: :app do
+  task :install, :roles => :app do
     run "#{sudo} apt-get -y install curl git-core"
     run "curl -L https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash"
     bashrc = <<-BASHRC
