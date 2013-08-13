@@ -17,6 +17,8 @@ set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 
+set :shared_children, shared_children + %w{public/uploads}
+
 set :scm, "git"
 set :repository,  "https://github.com/oducroux/#{application}.git"
 set :branch, "master"
