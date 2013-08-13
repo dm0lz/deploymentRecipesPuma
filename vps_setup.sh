@@ -24,19 +24,18 @@ mysql -u root -p
 add-apt-repository ppa:chris-lea/node.js && apt-get -y update && apt-get -y install nodejs
 
 # add user
-adduser olivierdo
+adduser deployer
 /usr/sbin/visudo
-#=> add olivierdo to sudoers => olivierdo       ALL=(ALL:ALL) ALL
-#=> olivierdo ALL= NOPASSWD: /etc/init.d/unicorn_deployTest
-su olivierdoe
-sudo usermod -a -G rvm olivierdoe if install rvm :system
+#=> add deployer to sudoers => deployer       ALL=(ALL:ALL) ALL
+#=> deployer ALL= NOPASSWD: /etc/init.d/unicorn_deployTest
+su deployer
+sudo usermod -a -G rvm deployer if install rvm :system
 ssh-keygen -t rsa
-cat ~/.ssh/id_rsa.pub | ssh olivierdoe@37.139.14.17 'cat >> ~/.ssh/authorized_keys'
+cat ~/.ssh/id_rsa.pub | ssh deployer@37.139.18.119 'cat >> ~/.ssh/authorized_keys'
 
-su olivierdoe
+su deployer
 cd ~
-source /etc/profile.d/rvm.sh
-gem install bundler (logged as olivierdoe)
+gem install bundler (logged as deployer)
 gem install rake
 
 # Image Magick
