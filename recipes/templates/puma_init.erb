@@ -15,7 +15,7 @@ TIMEOUT=${TIMEOUT-60}
 APP_ROOT=<%= current_path %>
 PID=<%= puma_pid %>
 
-CMD="cd <%= current_path %>; bundle exec puma -e production -d -b unix:/tmp/puma.<%= application %>.sock --pidfile /home/olivierdoe/apps/<%= application %>/current/tmp/pids/puma.pid"
+CMD="cd <%= current_path %>; bundle exec puma -e production -d -b unix:/tmp/puma.<%= application %>.sock --pidfile /home/deployer/apps/<%= application %>/current/tmp/pids/puma.pid"
 
 #CMD="cd <%= current_path %>; bundle exec puma -e production -d -b unix:/tmp/puma.<%= application %>.sock"
 
