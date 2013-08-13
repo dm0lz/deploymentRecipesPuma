@@ -12,7 +12,7 @@ server "olivierdo.no-ip.org", :web, :app, :db, :primary => true
 
 set :site_url, "olivierdo.no-ip.org"
 set :application, "pumaApp"
-set :user, "olivierdoe"
+set :user, "deployer"
 
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
