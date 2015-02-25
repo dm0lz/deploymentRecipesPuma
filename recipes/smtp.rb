@@ -1,4 +1,21 @@
 
+  # Add to config/environments/production.rb
+
+  #config.before_configuration do
+  #  env_file = File.join(Rails.root, 'config', 'smtp.yml')
+  #  YAML.load(File.open(env_file)).each do |key, value|
+  #    ENV[key.to_s] = value
+  #  end if File.exists?(env_file)
+  #end
+  #config.action_mailer.smtp_settings = {
+  #  :address              => "smtp.gmail.com",
+  #  :port                 => 587,
+  #  :domain               => "yogic-sadhana.com",
+  #  :user_name            => ENV["GMAIL_USERNAME"],
+  #  :password             => ENV["GMAIL_PASSWORD"],
+  #  :authentication       => :plain,
+  #  :enable_starttls_auto => true
+  #}
 
 namespace :smtp_config do
 
